@@ -59,6 +59,7 @@ section ul li img {
   display: block;
   margin: 0 auto 10px auto;
   border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 section ul li a {
