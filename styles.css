@@ -1,3 +1,4 @@
+/* Existing CSS */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -41,4 +42,24 @@ footer {
   position: fixed;
   width: 100%;
   bottom: 0;
+}
+
+/* New CSS for Featured Projects */
+section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+section ul li {
+  margin: 10px 0;
+}
+
+section ul li a {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section ul li a:hover {
+  text-decoration: underline;
 }
