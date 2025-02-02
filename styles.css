@@ -1,73 +1,124 @@
-/* Existing CSS */
+/* General body styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: #f8f9fa;
   color: #333;
 }
 
+/* Header styles */
 header {
-  background-color: #333;
+  background-color: #343a40;
   color: #fff;
-  padding: 10px 0;
+  padding: 20px 0;
   text-align: center;
 }
 
-nav ul {
+header h1 {
+  font-size: 2.5em;
+  margin: 0;
+  font-weight: 700;
+}
+
+header nav ul {
   list-style: none;
   padding: 0;
+  margin-top: 15px;
 }
 
-nav ul li {
+header nav ul li {
   display: inline;
-  margin: 0 10px;
+  margin: 0 20px;
 }
 
-nav ul li a {
+header nav ul li a {
   color: #fff;
   text-decoration: none;
+  font-size: 1.1em;
+  transition: color 0.3s;
 }
 
+header nav ul li a:hover {
+  color: #007bff;
+}
+
+/* Main content styles */
 main {
-  padding: 20px;
-  text-align: center;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
+section {
+  margin-bottom: 40px;
 }
 
-/* New CSS for Featured Projects */
+section h2 {
+  font-size: 2em;
+  color: #343a40;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+section p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Featured Projects section */
 section ul {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 section ul li {
-  margin: 20px 0;
+  width: 30%;
+  margin-bottom: 20px;
   text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+section ul li:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 section ul li img {
-  display: block;
-  margin: 0 auto 10px auto; /* Center the image and add space below */
-  border-radius: 8px; /* Optional: Add rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+  width: 100%;
+  max-width: 150px;
+  margin-bottom: 15px;
+  border-radius: 8px;
 }
 
 section ul li a {
-  color: #007BFF;
+  color: #007bff;
+  font-size: 1.2em;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 section ul li a:hover {
   text-decoration: underline;
+}
+
+/* Footer styles */
+footer {
+  background-color: #343a40;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1em;
 }
