@@ -67,45 +67,45 @@ section p {
 }
 
 /* Featured Projects section */
-section ul {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+/* Container for the project cards */
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between cards */
 }
 
-section ul li {
-  width: 30%;
-  margin-bottom: 20px;
-  text-align: center;
+/* Each card styling */
+.project-cards .card {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
 }
 
-section ul li:hover {
+.project-cards .card:hover {
   transform: translateY(-10px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-section ul li img {
+/* Card image styling */
+.project-cards .card img {
   width: 100%;
   max-width: 150px;
   margin-bottom: 15px;
   border-radius: 8px;
 }
 
-section ul li a {
+/* Link styling */
+.project-cards .card a {
   color: #007bff;
   font-size: 1.2em;
   text-decoration: none;
   font-weight: 600;
 }
 
-section ul li a:hover {
+.project-cards .card a:hover {
   text-decoration: underline;
 }
 
