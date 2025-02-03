@@ -5,64 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Bootstrap 4 or 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Google Fonts for a professional look -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Desmond Koo - Web Developer</h1>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="bg-dark text-white p-3">
+    <div class="container">
+      <h1>Desmond Koo - Web Developer</h1>
+      <nav>
+        <ul class="list-unstyled d-flex">
+          <li class="me-3"><a href="#" class="text-white">Home</a></li>
+          <li class="me-3"><a href="#" class="text-white">About</a></li>
+          <li class="me-3"><a href="#" class="text-white">Projects</a></li>
+          <li><a href="#" class="text-white">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
   
-  <main>
+  <main class="container mt-5">
     <section>
       <h2>About Me</h2>
       <p>Hello, I'm Desmond Koo, a passionate web developer with a focus on building responsive and user-friendly websites. I have expertise in front-end and back-end development, as well as experience in 3D animation and game engines.</p>
     </section>
 
-      <section>
+    <section>
       <h2>Featured Projects</h2>
       <p>Check out these websites I've worked on:</p>
-      <ul>
-        <li>
-          <img src="https://via.placeholder.com/150" alt="Shinenii UAT">
+      <div class="row">
+        <div class="col-12 col-md-4 mb-3">
+          <img src="https://via.placeholder.com/150" alt="Shinenii UAT" class="img-fluid">
           <a href="https://uat.shinenii.pepnco.com.sg/" target="_blank">Shinenii UAT</a>
-        </li>
-        <li>
-          <img src="https://via.placeholder.com/150" alt="TCG UAT">
+        </div>
+        <div class="col-12 col-md-4 mb-3">
+          <img src="https://via.placeholder.com/150" alt="TCG UAT" class="img-fluid">
           <a href="https://uat.tcg.pepnco.com.sg/" target="_blank">TCG UAT</a>
-        </li>
-        <li>
-          <img src="https://via.placeholder.com/150" alt="Heyya UAT">
+        </div>
+        <div class="col-12 col-md-4 mb-3">
+          <img src="https://via.placeholder.com/150" alt="Heyya UAT" class="img-fluid">
           <a href="https://uat.heyya.sg/" target="_blank">Heyya UAT</a>
-        </li>
-        <li>
-          <img src="https://via.placeholder.com/150" alt="Digital4IT UAT">
+        </div>
+        <div class="col-12 col-md-4 mb-3">
+          <img src="https://via.placeholder.com/150" alt="Digital4IT UAT" class="img-fluid">
           <a href="https://uat.digital4it.co/" target="_blank">Digital4IT UAT</a>
-        </li>
-        <li>
-          <img src="https://via.placeholder.com/150" alt="6ev UAT">
+        </div>
+        <div class="col-12 col-md-4 mb-3">
+          <img src="https://via.placeholder.com/150" alt="6ev UAT" class="img-fluid">
           <a href="https://uat.6ev.dev/" target="_blank">6ev UAT</a>
-        </li>
-        <li>
-          <img src="https://via.placeholder.com/150" alt="Borneo Wildlife Cruise UAT">
+        </div>
+        <div class="col-12 col-md-4 mb-3">
+          <img src="https://via.placeholder.com/150" alt="Borneo Wildlife Cruise UAT" class="img-fluid">
           <a href="https://uat.borneowildlifecruise.com/" target="_blank">Borneo Wildlife Cruise UAT</a>
-        </li>
-      </ul>
+        </div>
+        <div class="col-12 col-md-4 mb-3">
+          <img src="https://via.placeholder.com/150" alt="DSG Youth" class="img-fluid">
+          <a href="https://uat.www.youthsfordementia.sg/" target="_blank">Dementia Singapore</a>
+        </div>
+      </div>
     </section>
   </main>
   
-  <footer>
+  <footer class="bg-dark text-white text-center py-3">
     <p>&copy; 2023 Desmond Koo. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
