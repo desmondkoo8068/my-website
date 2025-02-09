@@ -1,66 +1,197 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desmond Koo - Web Developer</title>
+  <!-- Link to your local styles.css -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Fonts for a professional look -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Custom styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+    }
+    header {
+      background: linear-gradient(45deg, #6c757d, #343a40);
+      color: white;
+      padding: 40px 0;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    header nav ul {
+      display: flex;
+      justify-content: center;
+      padding-left: 0;
+    }
+    header nav ul li {
+      margin: 0 20px;
+    }
+    header nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    header nav ul li a:hover {
+      color: #ffd700;
+    }
 
-const projects = [
-  { name: "Shinenii UAT", url: "https://uat.shinenii.pepnco.com.sg/", img: "shine-logo.png" },
-  { name: "TCG UAT", url: "https://uat.tcg.pepnco.com.sg/", img: "tcg-logo.png" },
-  { name: "Heyya UAT", url: "https://uat.heyya.sg/", img: "heyya-logo.png" },
-  { name: "Digital4IT UAT", url: "https://uat.digital4it.co/", img: "d4-logo.png" },
-  { name: "6ev UAT", url: "https://uat.6ev.dev/", img: "6ev-logo.png" },
-  { name: "Borneo Wildlife Cruise UAT", url: "https://uat.borneowildlifecruise.com/", img: "bwc-logo.png" },
-  { name: "Dementia Singapore", url: "https://uat.www.youthsfordementia.sg/", img: "dsg-logo-mob.png" },
-  { name: "PS9", url: "https://ps9city.esoft8888.com/", img: "ps9-logo.png" },
-];
+    main {
+      margin-top: 30px;
+      margin:1rem;
+    }
 
-export default function Portfolio() {
-  return (
-    <div className="min-h-screen bg-gray-100 font-roboto">
-      <header className="bg-gradient-to-r from-gray-700 to-gray-900 text-white py-10 text-center">
-        <h1 className="text-4xl font-bold">Desmond Koo - Web Developer</h1>
-      </header>
-      <main className="max-w-5xl mx-auto p-5">
-        <section className="text-center my-10">
-          <h2 className="text-3xl font-semibold text-gray-800">About Me</h2>
-          <p className="text-gray-600 mt-4">
-            Hello, I'm Desmond Koo, a passionate web developer with expertise in
-            both front-end and back-end development. I specialize in building
-            responsive, user-friendly websites and have experience in 3D animation
-            and game development.
-          </p>
-        </section>
-        <section>
-          <h2 className="text-3xl font-semibold text-center text-gray-800 my-10">Featured Projects</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {projects.map((project, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.05 }}
-                className="flex justify-center"
-              >
-                <Card className="rounded-xl shadow-lg bg-white overflow-hidden w-80">
-                  <img
-                    src={project.img}
-                    alt={project.name}
-                    className="w-full h-40 object-contain bg-gray-200"
-                  />
-                  <CardContent className="p-4 text-center">
-                    <Button asChild className="w-full bg-yellow-500 hover:bg-yellow-400">
-                      <a href={project.url} target="_blank" rel="noopener noreferrer">
-                        {project.name}
-                      </a>
-                    </Button>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </section>
-      </main>
-      <footer className="bg-gray-900 text-white text-center py-4 mt-10">
-        <p>&copy; 2024 Desmond Koo. All rights reserved.</p>
-      </footer>
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #343a40;
+    }
+
+    .about-me{
+      text-align:center;
+    }
+
+    .project-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: min-content;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: #343a40;
+      font-size: 1.2rem;
+      font-weight: 500;
+      padding: 15px;
+      display: block;
+      background-color: #ffd700;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .card a:hover {
+      background-color: #ffcc00;
+    }
+
+    footer {
+      background-color: #343a40;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Desmond Koo - Web Developer</h1>
+<!--       <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav> -->
     </div>
-  );
-}
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>About Me</h2>
+      <p class="about-me">Hello, I'm Desmond Koo, a passionate web developer with expertise in both front-end and back-end development. I specialize in building responsive, user-friendly websites and have experience in 3D animation and game development.</p>
+    </section>
+
+
+      <div class="container">
+      <h2>Featured Projects</h2>
+      <div class="project-cards">
+        <!-- Project 1 -->
+        <div class="card">
+          <div class="container">
+          <img src="shine-logo.png" alt="Shinenii UAT">
+          <a href="https://uat.shinenii.pepnco.com.sg/" target="_blank">Shinenii UAT</a>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="card">
+          <img src="tcg-logo.png" alt="TCG UAT" style="width:80%">
+          <a href="https://uat.tcg.pepnco.com.sg/" target="_blank">TCG UAT</a>
+        </div>
+        <!-- Project 3 -->
+        <div class="card">
+          <img src="heyya-logo.png" alt="Heyya UAT" >
+          <a href="https://uat.heyya.sg/" target="_blank">Heyya UAT</a>
+        </div>
+        <!-- Project 4 -->
+        <div class="card">
+          <div class="container">
+          <img src="d4-logo.png" alt="Digital4IT UAT">
+          <a href="https://uat.digital4it.co/" target="_blank">Digital4IT UAT</a>
+          </div>
+        </div>
+        <!-- Project 5 -->
+        <div class="card">
+          <img src="6ev-logo.png" alt="6ev UAT">
+          <a href="https://uat.6ev.dev/" target="_blank">6ev UAT</a>
+        </div>
+        <!-- Project 6 -->
+        <div class="card">
+          <img src="bwc-logo.png" alt="Borneo Wildlife Cruise UAT">
+          <a href="https://uat.borneowildlifecruise.com/" target="_blank">Borneo Wildlife Cruise UAT</a>
+        </div>
+        <!-- Project 7 -->
+        <div class="card">
+          <img src="dsg-logo-mob.png" alt="DSG Youth">
+          <a href="https://uat.www.youthsfordementia.sg/" target="_blank">Dementia Singapore</a>
+        </div>
+        <!-- Project 8 -->
+        <div class="card">
+          <img src="ps9-logo.png" alt="PS9 City">
+          <a href="https://ps9city.esoft8888.com/" target="_blank">PS9</a>
+        </div>
+      </div>
+      </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Desmond Koo. All rights reserved.</p>
+  </footer>
+
+  <!-- Link to your local script.js -->
+  <script src="script.js"></script>
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
