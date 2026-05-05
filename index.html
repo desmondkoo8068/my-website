@@ -3,170 +3,160 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desmond Koo - Portfolio</title>
+  <title>Desmond Koo — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background: #121212;
-      color: #ffffff;
-    }
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
-    header {
-      text-align: center;
-      padding: 50px 0;
-      background: linear-gradient(135deg, #1e1e1e, #333333);
-    }
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-      font-weight: 600;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      opacity: 0.8;
-    }
-    .section {
-      padding: 60px 0;
-      text-align: center;
-    }
-    .section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      position: relative;
-      display: inline-block;
-    }
-    .section h2::after {
-      content: '';
-      width: 50px;
-      height: 4px;
-      background: #ffd700;
-      display: block;
-      margin: 10px auto;
-    }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 63px;
-      margin-top: 20px;
-    }
-    .card {
-      background: #222;
-      padding: 20px;
-      border-radius: 15px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0px 10px 20px rgba(255, 215, 0, 0.2);
-    }
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .card h3 {
-      margin-top: auto;
-      font-size: 1.5rem;
-      text-align: center;
-    }
-    .card a {
-      display: block;
-      text-decoration: none;
-      color: #ffd700;
-      font-weight: 600;
-      text-align: center;
-      margin-top: 10px;
-      padding: 10px;
-      background: #333;
-      border-radius: 5px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #1e1e1e;
-    }
-  </style>
 </head>
 <body>
 
-<header>
-  <div class="container">
-    <h1>Desmond Koo</h1>
-    <p> Web Developer | 
-        <a href="https://www.behance.net/desmondkoo" target="_blank" style="color: #ffd700; text-decoration: underline;">3D Animator</a> | Game Designer
-    </p>
+  <div class="bg-orbs" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
   </div>
-</header>
+  <div class="cursor-glow" aria-hidden="true"></div>
 
-<section class="section">
-  <div class="container">
-    <h2>About Me</h2>
-    <p>I specialize in front-end development, with some experience in back-end development, as well as 3D animation and game design. I'm passionate about creating interactive and visually engaging digital experiences.</p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="card">
-        <img src="shine-logo.png" alt="Shinenii UAT">
-        <h3>Shinenii UAT</h3>
-        <a href="https://uat.shinenii.pepnco.com.sg/" target="_blank">View Project</a>
-      </div>
-      <div class="card">
-        <img src="tcg-logo.png" alt="TCG UAT">
-        <h3>TCG UAT</h3>
-        <a href="https://uat.tcg.pepnco.com.sg/" target="_blank">View Project</a>
-      </div>
-      <div class="card">
-        <img src="heyya-logo.png" alt="Heyya UAT">
-        <h3>Heyya UAT</h3>
-        <a href="https://uat.heyya.sg/" target="_blank">View Project</a>
-      </div>
-      <div class="card">
-        <img src="d4-logo.png" alt="Digital4IT UAT">
-        <h3>Digital4IT UAT</h3>
-        <a href="https://uat.digital4it.co/" target="_blank">View Project</a>
-      </div>
-      <div class="card">
-        <img src="6ev-logo.png" alt="6ev UAT">
-        <h3>6ev UAT</h3>
-        <a href="https://uat.6ev.dev/" target="_blank">View Project</a>
-      </div>
-      <div class="card">
-        <img src="bwc-logo.png" alt="Borneo Wildlife Cruise UAT">
-        <h3>Borneo Wildlife Cruise UAT</h3>
-        <a href="https://uat.borneowildlifecruise.com/" target="_blank">View Project</a>
-      </div>
-      <div class="card">
-        <h3>RAVEN CRYPTO</h3>
-        <a href="https://ravendao.net" target="_blank">View Project</a>
-      </div>
-       <div class="card">
-        <img src="dsg-logo.png" alt="DSG Youth UAT">
-        <h3>Dementia Singapore UAT</h3>
-        <a href="https://dementia.org.sg/" target="_blank">View Project</a>
-      </div>
-       <div class="card">
-        <img src="ps9-logo.png" alt="PS9 City">
-        <h3>PS9 UAT</h3>
-        <a href="https://ps9city.esoft8888.com/" target="_blank">View Project</a>
+  <header class="hero">
+    <div class="container">
+      <h1 class="hero-title" data-text="Desmond Koo">Desmond Koo</h1>
+      <p class="hero-sub">
+        <span class="role">Web Developer</span>
+        <span class="sep">|</span>
+        <a href="https://www.behance.net/desmondkoo" target="_blank" rel="noopener" class="role role-link">3D Animator</a>
+        <span class="sep">|</span>
+        <span class="role">Game Animator</span>
+      </p>
+      <svg class="hero-underline" viewBox="0 0 220 10" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M2,6 Q55,1 110,5 T218,4" stroke="#ffd700" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="scroll-cue" aria-hidden="true">
+        <span></span>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
+  <section class="section about reveal">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="about-text">I specialize in front-end development, with some experience in back-end development, as well as 3D animation and game design. I'm passionate about creating interactive and visually engaging digital experiences.</p>
+    </div>
+  </section>
+
+  <section class="section projects-section reveal">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects">
+
+        <article class="card tilt-card" data-initial="S">
+          <div class="card-image">
+            <img src="shine-logo.png" alt="Shinenii UAT" onerror="this.classList.add('img-fail')">
+          </div>
+          <h3>Shinenii UAT</h3>
+          <a href="https://uat.shinenii.pepnco.com.sg/" target="_blank" rel="noopener">View Project <span class="arrow">→</span></a>
+        </article>
+
+        <article class="card tilt-card" data-initial="T">
+          <div class="card-image">
+            <img src="tcg-logo.png" alt="TCG UAT" onerror="this.classList.add('img-fail')">
+          </div>
+          <h3>TCG UAT</h3>
+          <a href="https://uat.tcg.pepnco.com.sg/" target="_blank" rel="noopener">View Project <span class="arrow">→</span></a>
+        </article>
+
+        <article class="card tilt-card" data-initial="H">
+          <div class="card-image">
+            <img src="heyya-logo.png" alt="Heyya UAT" onerror="this.classList.add('img-fail')">
+          </div>
+          <h3>Heyya UAT</h3>
+          <a href="https://uat.heyya.sg/" target="_blank" rel="noopener">View Project <span class="arrow">→</span></a>
+        </article>
+
+        <article class="card tilt-card" data-initial="D">
+          <div class="card-image">
+            <img src="d4-logo.png" alt="Digital4IT UAT" onerror="this.classList.add('img-fail')">
+          </div>
+          <h3>Digital4IT UAT</h3>
+          <a href="https://uat.digital4it.co/" target="_blank" rel="noopener">View Project <span class="arrow">→</span></a>
+        </article>
+
+        <article class="card tilt-card" data-initial="6">
+          <div class="card-image">
+            <img src="6ev-logo.png" alt="6ev UAT" onerror="this.classList.add('img-fail')">
+          </div>
+          <h3>6ev UAT</h3>
+          <a href="https://uat.6ev.dev/" target="_blank" rel="noopener">View Project <span class="arrow">→</span></a>
+        </article>
+
+        <article class="card tilt-card" data-initial="B">
+          <div class="card-image">
+            <img src="bwc-logo.png" alt="Borneo Wildlife Cruise UAT" onerror="this.classList.add('img-fail')">
+          </div>
+          <h3>Borneo Wildlife Cruise UAT</h3>
+          <a href="https://uat.borneowildlifecruise.com/" target="_blank" rel="noopener">View Project <span class="arrow">→</span></a>
+        </article>
+
+        <article class="card tilt-card" data-initial="D">
+          <div class="card-image">
+            <img src="dsg-logo.png" alt="Dementia Singapore" onerror="this.classList.add('img-fail')">
+          </div>
+          <h3>Dementia Singapore UAT</h3>
+          <a href="https://dementia.org.sg/" target="_blank" rel="noopener">View Project <span class="arrow">→</span></a>
+        </article>
+
+        <article class="card tilt-card" data-initial="P">
+          <div class="card-image">
+            <img src="ps9-logo.png" alt="PS9 City" onerror="this.classList.add('img-fail')">
+          </div>
+          <h3>PS9 UAT</h3>
+          <a href="https://ps9city.esoft8888.com/" target="_blank" rel="noopener">View Project <span class="arrow">→</span></a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section projects-section games-section reveal">
+    <div class="container">
+      <h2 class="section-title">HTML5 Games</h2>
+      <div class="projects">
+
+        <article class="card tilt-card" data-initial="F">
+          <div class="card-image">
+            <img src="flame-of-fortune.png" alt="Flame of Fortune" onerror="this.classList.add('img-fail')">
+          </div>
+          <h3>Flame of Fortune</h3>
+          <a href="https://m13.ns86.kingdomhall729.com/games/zvnbN51owO/index.html?test=1&currency=usd" target="_blank" rel="noopener">View Project <span class="arrow">→</span></a>
+        </article>
+
+        <article class="card tilt-card" data-initial="T">
+          <div class="card-image">
+            <img src="tides-of-fortune.png" alt="Tides of Fortune" onerror="this.classList.add('img-fail')">
+          </div>
+          <h3>Tides of Fortune</h3>
+          <a href="https://m13.ns86.kingdomhall729.com/games/ydILHIYCKp/index.html?test=1&currency=usd" target="_blank" rel="noopener">View Project <span class="arrow">→</span></a>
+        </article>
+
+        <article class="card tilt-card" data-initial="W">
+          <div class="card-image">
+            <img src="wonder-ace.png" alt="Wonder Ace" onerror="this.classList.add('img-fail')">
+          </div>
+          <h3>Wonder Ace</h3>
+          <a href="https://m13.ns86.kingdomhall729.com/games/dnrFpuKVaz/index.html?test=1&currency=usd" target="_blank" rel="noopener">View Project <span class="arrow">→</span></a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Desmond Koo PortFolio</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
