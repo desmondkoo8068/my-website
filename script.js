@@ -92,14 +92,25 @@ document.addEventListener('DOMContentLoaded', () => {
   // Continuous gold color/glow wave sweeping across the title letters.
   anime({
     targets: '.hero-title .char',
-    color: ['#ffffff', '#ffd700'],
+    color: ['#ffffff', '#ffd700', '#ffffff'],
     textShadow: [
       '0 0 0px rgba(255, 215, 0, 0)',
-      '0 0 20px rgba(255, 215, 0, 0.75)',
+      '0 0 30px rgba(255, 215, 0, 0.85)',
+      '0 0 0px rgba(255, 215, 0, 0)',
     ],
-    translateY: [0, -6],
-    duration: 1400,
-    delay: anime.stagger(90, { from: 'first' }),
+    translateY: [0, -8, 0],
+    duration: 2000,
+    delay: anime.stagger(100, { from: 'first' }),
+    easing: 'easeInOutSine',
+    loop: true,
+  });
+
+  // Floating micro-animations on hero title letters
+  anime({
+    targets: '.hero-title .char',
+    rotate: () => anime.random(-2, 2),
+    duration: 3000 + anime.random(0, 2000),
+    delay: anime.stagger(50),
     direction: 'alternate',
     easing: 'easeInOutSine',
     loop: true,
@@ -232,12 +243,12 @@ document.addEventListener('DOMContentLoaded', () => {
       card.style.setProperty('--mx', px + '%');
       card.style.setProperty('--my', py + '%');
 
-      // Subtle 3D tilt.
-      const rx = ((y / rect.height) - 0.5) * -6;
-      const ry = ((x / rect.width) - 0.5) * 6;
+      // Enhanced 3D tilt with more dramatic effect.
+      const rx = ((y / rect.height) - 0.5) * -8;
+      const ry = ((x / rect.width) - 0.5) * 8;
       if (raf) cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => {
-        card.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+        card.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-8px) scale(1.02)`;
       });
     });
     card.addEventListener('mouseleave', () => {
@@ -248,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
         rotateY: 0,
         translateY: 0,
         scale: 1,
-        duration: 600,
+        duration: 700,
         easing: 'spring(1, 80, 12, 0)',
       });
     });
@@ -322,24 +333,49 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ---------- 7. Cursor glow follow ----------
+  // ---------- 7. Cursor glow follow with enhanced effects ----------
   const glow = document.querySelector('.cursor-glow');
   if (glow && window.matchMedia('(hover: hover)').matches) {
     let mouseX = 0, mouseY = 0;
     let curX = 0, curY = 0;
+    let lastX = 0, lastY = 0;
 
     document.addEventListener('mousemove', (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
       glow.style.opacity = '1';
+
+      // Create occasional sparkles on mouse movement
+      if (!prefersReduced && Math.random() > 0.92) {
+        const sparkle = document.createElement('span');
+        sparkle.className = 'sparkle-dot';
+        sparkle.style.position = 'fixed';
+        sparkle.style.left = mouseX + 'px';
+        sparkle.style.top = mouseY + 'px';
+        sparkle.style.pointerEvents = 'none';
+        document.body.appendChild(sparkle);
+
+        anime({
+          targets: sparkle,
+          opacity: [1, 0],
+          scale: [1, 0],
+          translateX: () => anime.random(-30, 30),
+          translateY: () => anime.random(-30, 30),
+          duration: 600,
+          easing: 'easeOutCubic',
+          complete: () => sparkle.remove(),
+        });
+      }
     });
     document.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
 
     const tick = () => {
-      curX += (mouseX - curX) * 0.12;
-      curY += (mouseY - curY) * 0.12;
+      curX += (mouseX - curX) * 0.15;
+      curY += (mouseY - curY) * 0.15;
       glow.style.left = curX + 'px';
       glow.style.top = curY + 'px';
+      lastX = curX;
+      lastY = curY;
       requestAnimationFrame(tick);
     };
     tick();
