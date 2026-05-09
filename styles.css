@@ -73,16 +73,18 @@ html, body {
 /* ---------- cursor glow ---------- */
 .cursor-glow {
   position: fixed;
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 215, 0, 0.18) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.25) 0%, rgba(106, 61, 245, 0.15) 35%, transparent 70%);
   pointer-events: none;
   z-index: 1;
   transform: translate(-50%, -50%);
   left: -200px; top: -200px;
   transition: opacity 0.3s;
   opacity: 0;
+  filter: blur(60px);
+  box-shadow: 0 0 100px rgba(255, 215, 0, 0.3);
 }
 @media (hover: none) { .cursor-glow { display: none; } }
 
@@ -105,6 +107,7 @@ html, body {
   color: #ffffff;
   text-shadow: 0 0 28px rgba(255, 215, 0, 0.25);
   display: inline-block;
+  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
 }
 .hero-title .char {
   display: inline-block;
@@ -179,6 +182,10 @@ html, body {
   text-align: center;
   position: relative;
   display: inline-block;
+  color: #ffd700;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 40px rgba(106, 61, 245, 0.2);
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+  animation: titleGlow 3s ease-in-out infinite;
 }
 .section-title::after {
   content: '';
@@ -187,12 +194,18 @@ html, body {
   left: 50%;
   width: 0;
   height: 3px;
-  background: var(--gold);
+  background: linear-gradient(90deg, var(--gold), #6a3df5);
   transform: translateX(-50%);
   border-radius: 2px;
   transition: width 0.8s cubic-bezier(.2, .8, .2, 1) 0.25s;
+  box-shadow: 0 0 15px var(--gold);
 }
 .section-title.is-revealed::after { width: 60px; }
+
+@keyframes titleGlow {
+  0%, 100% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 40px rgba(106, 61, 245, 0.2); filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3)); }
+  50% { text-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 0 50px rgba(106, 61, 245, 0.4); filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6)); }
+}
 
 .about { text-align: center; }
 .about-text {
@@ -230,18 +243,33 @@ html, body {
   overflow: hidden;
   transition: border-color 0.3s ease;
   will-change: transform;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0);
 }
 .card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255, 215, 0, 0.12) 0%, transparent 50%);
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255, 215, 0, 0.15) 0%, transparent 50%);
   opacity: 0;
   transition: opacity 0.35s;
   pointer-events: none;
 }
-.card:hover { border-color: rgba(255, 215, 0, 0.35); }
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.card:hover {
+  border-color: rgba(255, 215, 0, 0.35);
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.25), 0 0 80px rgba(106, 61, 245, 0.15);
+}
 .card:hover::before { opacity: 1; }
+.card:hover::after { opacity: 1; }
 
 .card-image {
   position: relative;
@@ -273,9 +301,13 @@ html, body {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.5s ease;
+  filter: brightness(1) saturate(1);
 }
-.card:hover .card-image img { transform: scale(1.06); }
+.card:hover .card-image img {
+  transform: scale(1.1);
+  filter: brightness(1.15) saturate(1.3);
+}
 
 .tilt-card .card-image {
   aspect-ratio: 1 / 1;
@@ -323,17 +355,33 @@ html, body {
   background: rgba(255, 215, 0, 0.08);
   border: 1px solid rgba(255, 215, 0, 0.2);
   border-radius: 10px;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
   will-change: transform;
+  position: relative;
+  overflow: hidden;
+}
+.card a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+  pointer-events: none;
 }
 .card a:hover {
-  background: rgba(255, 215, 0, 0.18);
+  background: rgba(255, 215, 0, 0.25);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+  transform: translateY(-2px);
+}
+.card a:hover::before {
+  transform: translateX(100%);
 }
 .card a .arrow {
   transition: transform 0.3s ease;
   display: inline-block;
 }
-.card a:hover .arrow { transform: translateX(4px); }
+.card a:hover .arrow { transform: translateX(6px) scale(1.2); }
 
 /* ---------- scroll-up pulse ---------- */
 .tilt-card .card-image.pulse-up {
