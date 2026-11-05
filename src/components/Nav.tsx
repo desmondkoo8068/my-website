@@ -1,10 +1,9 @@
 import { resume } from '../data/resume';
 
 const LINKS = [
-  { href: '#about', label: 'About' },
-  { href: '#work', label: 'Work' },
-  { href: '#games', label: 'Games' },
   { href: '#experience', label: 'Experience' },
+  { href: '#games', label: 'Games' },
+  { href: '#work', label: 'Client sites' },
   { href: '#skills', label: 'Skills' },
   { href: '#contact', label: 'Contact' },
 ];
@@ -24,7 +23,7 @@ export function Nav() {
             </li>
           ))}
         </ul>
-        <a className="btn btn-small" href={resume.cvUrl} download>
+        <a className="btn btn-small" href={resume.cvUrl} download="Desmond_Koo_Resume.pdf">
           CV
         </a>
       </div>

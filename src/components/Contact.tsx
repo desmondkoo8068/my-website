@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { resume } from '../data/resume';
+import { Section } from './Section';
 
 export function Contact() {
   const [copied, setCopied] = useState(false);
@@ -16,28 +17,29 @@ export function Contact() {
   };
 
   return (
-    <section className="contact" id="contact" aria-labelledby="contact-title">
-      <div className="wrap">
-        <h2 id="contact-title">Hiring, or have a project in mind?</h2>
-        <p className="contact-lead">Email is the fastest way to reach me. I usually reply within a day.</p>
-        <div className="contact-mail">
-          <a className="contact-address" href={`mailto:${resume.email}`}>
-            {resume.email}
-          </a>
-          <button type="button" className="btn btn-small" onClick={copy}>
-            {copied ? 'Copied' : 'Copy email'}
-          </button>
-        </div>
-        <ul className="contact-links">
-          {links.map((l) => (
-            <li key={l.label}>
-              <a href={l.url} target="_blank" rel="noopener noreferrer">
-                {l.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+    <Section id="contact" title="Contact">
+      <div className="contact-mail">
+        <a className="contact-address" href={`mailto:${resume.email}`}>
+          {resume.email}
+        </a>
+        <button type="button" className="btn btn-small" onClick={copy}>
+          {copied ? 'Copied' : 'Copy'}
+        </button>
       </div>
-    </section>
+      <ul className="contact-links">
+        {links.map((l) => (
+          <li key={l.label}>
+            <a href={l.url} target="_blank" rel="noopener noreferrer">
+              {l.label}
+            </a>
+          </li>
+        ))}
+        <li>
+          <a href={resume.cvUrl} download="Desmond_Koo_Resume.pdf">
+            CV (PDF)
+          </a>
+        </li>
+      </ul>
+    </Section>
   );
 }

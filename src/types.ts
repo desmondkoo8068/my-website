@@ -12,13 +12,11 @@ export interface Track {
 export interface Project {
   name: string;
   url: string;
-  track: TrackId;
   kind: string;
   status: 'Live' | 'Staging';
   logo?: string;
   /** 'dark' puts the logo on a dark tile (for white logos). */
   logoTone?: 'light' | 'dark';
-  /** Set true to keep an entry in the data but off the page. */
   hidden?: boolean;
 }
 
@@ -35,6 +33,15 @@ export interface Job {
   start: string;
   end: string;
   points: string[];
+  note?: string;
+}
+
+export interface Study {
+  award: string;
+  school: string;
+  start: string;
+  end: string;
+  note?: string;
 }
 
 export interface LinkItem {
@@ -44,9 +51,10 @@ export interface LinkItem {
 
 export interface Resume {
   name: string;
+  title: string;
   location: string;
+  photo: string;
   intro: string;
-  availability: string;
   email: string;
   cvUrl: string;
   links: LinkItem[];
@@ -56,5 +64,6 @@ export interface Resume {
   projects: Project[];
   games: Game[];
   experience: Job[];
-  skills: Record<TrackId, string[]>;
+  education: Study[];
+  skills: { label: string; items: string }[];
 }

@@ -6,11 +6,7 @@ export function Games() {
   if (!games.length) return null;
 
   return (
-    <Section
-      id="games"
-      title="Games"
-      lead="HTML5 slot games I’ve animated for. Each one opens a playable demo build in a new tab."
-    >
+    <Section id="games" title="Games" lead="HTML5 slot games built in Cocos Creator. Click a cover to play the demo.">
       <ul className="games">
         {games.map((g) => (
           <li key={g.url}>
@@ -20,7 +16,6 @@ export function Games() {
                 {g.name}
                 <span className="visually-hidden"> (opens a demo in a new tab)</span>
               </span>
-              <span className="game-play" aria-hidden="true">Play demo</span>
             </a>
           </li>
         ))}

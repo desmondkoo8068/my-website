@@ -9,32 +9,34 @@ export function Hero() {
   return (
     <header className="hero" id="top">
       <div className="wrap">
-        <h1 className="hero-name">{resume.name}</h1>
-
-        {/* Changes as the playhead moves; the static intro below carries the same info for screen readers. */}
-        <p className="hero-line" aria-hidden="true" key={active.id}>
-          {active.line}
-        </p>
-
-        <div className="hero-meta">
-          <p className="hero-intro">{resume.intro}</p>
-          <div className="hero-actions">
-            <a className="btn btn-primary" href="#work">
-              See my work
-            </a>
-            <a className="btn" href={resume.cvUrl} download>
-              Download CV
-            </a>
-          </div>
-          {resume.availability && (
-            <p className="hero-status">
-              <span className="dot" aria-hidden="true" />
-              {resume.availability} · {resume.location}
+        <div className="hero-id">
+          <img className="hero-photo" src={resume.photo} alt={`Photo of ${resume.name}`} width={480} height={480} />
+          <div>
+            <h1 className="hero-name">{resume.name}</h1>
+            <p className="hero-title">
+              {resume.title}, {resume.location}
             </p>
-          )}
+          </div>
         </div>
 
-        <DopeSheet tracks={resume.tracks} frame={frame} onFrame={setFrame} />
+        <p className="hero-intro">{resume.intro}</p>
+
+        <div className="hero-actions">
+          <a className="btn btn-primary" href={resume.cvUrl} download="Desmond_Koo_Resume.pdf">
+            Download CV (PDF)
+          </a>
+          <a className="btn" href={`mailto:${resume.email}`}>
+            Email me
+          </a>
+        </div>
+
+        <div className="hero-sheet">
+          {/* Changes as the playhead moves; decorative, so hidden from screen readers. */}
+          <p className="hero-line" aria-hidden="true" key={active.id}>
+            {active.line}
+          </p>
+          <DopeSheet tracks={resume.tracks} frame={frame} onFrame={setFrame} />
+        </div>
       </div>
     </header>
   );

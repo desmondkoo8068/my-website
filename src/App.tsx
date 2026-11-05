@@ -1,7 +1,8 @@
 import { About } from './components/About';
 import { Contact } from './components/Contact';
-import { Games } from './components/Games';
+import { Education } from './components/Education';
 import { Experience } from './components/Experience';
+import { Games } from './components/Games';
 import { Hero } from './components/Hero';
 import { Nav } from './components/Nav';
 import { Skills } from './components/Skills';
@@ -18,16 +19,15 @@ export default function App() {
       <Hero />
       <main id="main">
         <About />
-        <Work />
-        <Games />
         <Experience />
+        <Games />
+        <Work />
         <Skills />
+        <Education />
         <Contact />
       </main>
       <footer className="footer">
-        <div className="wrap">
-          © {new Date().getFullYear()} {resume.name}. Built with React and TypeScript.
-        </div>
+        <div className="wrap">© {new Date().getFullYear()} {resume.name}</div>
       </footer>
     </>
   );

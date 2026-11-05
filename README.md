@@ -13,7 +13,7 @@ After that, every push to `main` rebuilds the site (Actions tab shows progress).
 
 ## Editing
 
-Edit `src/data/resume.ts` (search for `TODO`), commit, push. Done.
+Edit `src/data/resume.ts`, commit, push. Done.
 
 To preview on your own computer first (optional):
 
@@ -22,4 +22,5 @@ npm install
 npm run dev      # http://localhost:5173
 ```
 
-Logos: `public/logos/`. Game covers: `public/games/`. CV: put `resume.pdf` in `public/`.
+Logos: `public/logos/`. Game covers: `public/games/`. Photo: `public/desmond.webp`.
+CV: replace `public/resume.pdf` whenever you update your résumé.
